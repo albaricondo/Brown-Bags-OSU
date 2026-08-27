@@ -1,0 +1,52 @@
+name: Brown Bags Signup
+about: Use this form to sign up as an attendee, speaker, or volunteer
+labels:
+  - brown-bags
+  - signup
+body:
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      description: How would you like to participate?
+      options:
+        - Attendee
+        - Speaker
+        - Volunteer
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: Your full name
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: Email
+      placeholder: name@example.edu
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+      placeholder: Department, lab, or organization
+    validations:
+      required: false
+  - type: textarea
+    id: interests
+    attributes:
+      label: Preferred topics or talk ideas
+      placeholder: What topics are you interested in?
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      placeholder: Anything else the organizers should know
+    validations:
+      required: false

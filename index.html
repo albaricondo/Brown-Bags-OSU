@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brown Bags OSU</title>
+    <meta
+      name="description"
+      content="Brown Bags at Oregon State University: live calendar, available slots, and public reservation of sessions."
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-layout">
+          <div>
+            <p class="eyebrow">Oregon State University · Coastal &amp; Ocean Group</p>
+            <h1>Brown Bags</h1>
+            <p class="lead">
+              Live calendar, available slots, and public reservation of sessions.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="#calendar">View calendar</a>
+              <a class="button secondary" href="https://your-zoom-link-here" target="_blank" rel="noreferrer">Join Zoom</a>
+              <a class="button secondary" href="program.html">Past Seminars</a>
+            </div>
+            </div>
+          <div class="hero-gallery hero-gallery-3">
+            <img src="data/pic-01.jpg" alt="Research photo 1" />
+            <img src="data/pic-02.jpg" alt="Research photo 2" />
+            <img src="data/pic-03.jpg" alt="Research photo 3" />
+          </div>
+      </section>
+
+      <section class="card reservation-panel">
+        <div class="section-head">
+          <h2>Your name</h2>
+        </div>
+        <form class="signup-form reservation-form" id="reservation-form">
+          <div class="form-grid single-column">
+            <label class="full-width">
+              <span>Full name</span>
+              <input name="reserver" id="reserver-name" type="text" placeholder="Your name" required />
+            </label>
+            <label class="full-width">
+              <span>Talk title (optional)</span>
+              <input name="talk-title" id="talk-title" type="text" placeholder="Add the title of the talk" />
+            </label>
+          </div>
+          <div class="form-actions">
+            <p class="hint" id="reservation-hint">
+              Type your name, then reserve a date. If you already have a reservation, you can update or remove it from the table below.
+            </p>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" id="calendar">
+        <div class="section-head">
+          <h2>Fall 2026: Calendar and slots</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Talk</th>
+                <th>Speaker</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="slots-table-body">
+              <tr>
+                <td colspan="6" class="loading">Loading calendar...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
